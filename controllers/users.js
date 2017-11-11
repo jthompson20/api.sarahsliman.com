@@ -70,7 +70,6 @@ var users 	= {
 			}
 		});
 	},
-	}
 	delete: 		function(req,res){
 		User.find({_id: req.params.id}).remove().exec(function(err,obj){
 			if (err) {
