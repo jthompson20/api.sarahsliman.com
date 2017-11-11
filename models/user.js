@@ -10,7 +10,7 @@ var user 	= new Schema({
 		height: 	String,
 		weight: 	String,
 		goal: 		String
-	}
+	},
 	active: 	{
 		type: 		Number,
 		default: 	1
