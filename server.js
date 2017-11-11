@@ -3,7 +3,7 @@
 var app 		= require('express')();
 var bodyparser 	= require('body-parser');
 var mongoose 	= require('mongoose');
-//var db 			= mongoose.connect("mongodb://localhost/embedded-widgets");
+var db 			= mongoose.connect("mongodb://localhost/sarah-sliman-power-group");
 
 // prep to be JSON & urlencode only vars
 //app.use(bodyparser.json());
