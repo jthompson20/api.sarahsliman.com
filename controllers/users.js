@@ -2,7 +2,6 @@ var User 	= require('../models/user');
 
 var users 	= {
 	all: 			function(req,res){
-		console.log(req);
 		User.find({},function(err,obj){
 			if (err){
 				res.status(500).send({error:"Could not retrieve objects"});
@@ -22,6 +21,8 @@ var users 	= {
 	},
 	create: 		function(req,res){
 		var user 	= new User(req.body);
+		console.log('>> body',req.body);
+		console.log('>> params',req.params);
 
 		// save mongo object
 		user.save(function(err,obj){
