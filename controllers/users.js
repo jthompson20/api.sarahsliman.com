@@ -2,6 +2,8 @@ var User 	= require('../models/user');
 
 var users 	= {
 	all: 			function(req,res){
+		res.send(req);
+		/*
 		User.find({},function(err,obj){
 			if (err){
 				res.status(500).send({error:"Could not retrieve objects"});
@@ -9,6 +11,7 @@ var users 	= {
 				res.send(obj);
 			}
 		});
+		*/
 	},
 	one: 			function(req,res){
 		User.find({_id:req.params.id}).exec(function(err,obj){
