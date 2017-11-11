@@ -60,7 +60,8 @@ var users 	= {
 			if (err) {
 				res.status(500).send({error: "Could not retrieve object"});
 			} else {
-				if (obj[0].active == 1){
+				console.log('>> user',obj);
+				if (typeof obj[0].active !== 'undefined' && obj[0].active == 1){
 					res.send(obj);
 				} else {
 					res.status(500).send({error: "Inactive"});
