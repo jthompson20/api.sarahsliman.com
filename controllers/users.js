@@ -21,17 +21,23 @@ var users 	= {
 	},
 	create: 		function(req,res){
 		var user 	= new User(req.body);
+
+		console.log('>> user',user);
 		console.log('>> body',req.body);
 		console.log('>> params',req.params);
 
-		// save mongo object
-		user.save(function(err,obj){
-			if (err){
-				res.status(500).send({error:"Could not save object"});
-			} else {
-				res.send(obj);
-			}
-		});
+		if (typeof user.email !== 'undefined'){
+
+			// save mongo object
+			user.save(function(err,obj){
+				if (err){
+					res.status(500).send({error:"Could not save object"});
+				} else {
+					res.send(obj);
+				}
+			});
+
+		}
 	},
 	update: 		function(req,res){
 		User.findByIdAndUpdate(req.params.id, { $set: req.body }, function (err, obj) {
