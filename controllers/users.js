@@ -37,6 +37,8 @@ var users 	= {
 				}
 			});
 
+		} else {
+			res.status(500).send({error:"Invalid object values"});
 		}
 	},
 	update: 		function(req,res){
