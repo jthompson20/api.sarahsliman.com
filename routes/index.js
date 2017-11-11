@@ -8,7 +8,7 @@ router.get('/users', 			users.all);
 router.get('/user/:id', 		users.one);
 router.post('/user', 			users.create);
 router.post('/user/find', 		users.find);
-router.post('/user/activate', 	users.activate);
+router.post('/user/active', 	users.active);
 router.post('/user/deactivate', users.deactivate);
 router.put('/user/:id', 		users.update);
 router.delete('/user/:id', 		users.delete);
