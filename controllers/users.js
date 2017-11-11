@@ -19,12 +19,17 @@ var users 	= {
 			}
 		});
 	},
+	find: 			function(req,res){
+		User.find({email:req.body.email}).exec(function(err,obj){
+			if (err) {
+				res.status(500).send({error: "Could not retrieve object"});
+			} else {
+				res.send(obj);
+			}
+		});
+	},
 	create: 		function(req,res){
 		var user 	= new User(req.body);
-
-		console.log('>> user',user);
-		console.log('>> body',req.body);
-		console.log('>> params',req.params);
 
 		if (typeof user.email !== 'undefined'){
 
