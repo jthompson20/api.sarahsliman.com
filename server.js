@@ -6,8 +6,8 @@ var mongoose 	= require('mongoose');
 var db 			= mongoose.connect("mongodb://localhost/sarah-sliman-power-group");
 
 // prep to be JSON & urlencode only vars
-//app.use(bodyparser.json());
-app.use(bodyparser.urlencoded({extended:false}));
+app.use(bodyparser.json());
+//app.use(bodyparser.urlencoded({extended:false}));
 
 
 app.all('/*', function(req, res, next) {
