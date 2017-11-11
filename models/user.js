@@ -11,6 +11,10 @@ var user 	= new Schema({
 		weight: 	String,
 		goal: 		String
 	}
+	active: 	{
+		type: 		Number,
+		default: 	1
+	},
 });
 
 module.exports 	= mongoose.model('User',user);
