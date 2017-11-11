@@ -60,7 +60,7 @@ var users 	= {
 			if (err) {
 				res.status(500).send({error: "Could not retrieve object"});
 			} else {
-				User.findByIdAndUpdate(obj.id, { $set: {"active":0} }, function (err, obj) {
+				User.findByIdAndUpdate(obj._id, { $set: {"active":0} }, function (err, obj) {
 					if (err) {
 						res.status(500).send({error: "Error updating obj"});
 					} else {
