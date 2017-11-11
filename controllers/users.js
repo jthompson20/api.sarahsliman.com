@@ -55,6 +55,19 @@ var users 	= {
 			}
 		});
 	},
+	active: 	function(req,res){
+		User.find({email:req.body.email}).exec(function(err,obj){
+			if (err) {
+				res.status(500).send({error: "Could not retrieve object"});
+			} else {
+				if (obj[0].active == 1){
+					res.send(obj);
+				} else {
+					res.status(500).send({error: "Inactive"});
+				}
+			}
+		});
+	},
 	deactivate: 	function(req,res){
 		User.find({email:req.body.email}).exec(function(err,obj){
 			if (err) {
