@@ -20,7 +20,7 @@ var users 	= {
 		});
 	},
 	find: 			function(req,res){
-		User.find({email:req.body.email}).exec(function(err,obj){
+		User.find({email:req.params.email}).exec(function(err,obj){
 			if (err) {
 				res.status(500).send({error: "Could not retrieve object"});
 			} else {
